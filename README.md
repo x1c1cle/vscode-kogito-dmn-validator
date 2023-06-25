@@ -1,0 +1,1 @@
+# vscode-kogito-dmn-validator
