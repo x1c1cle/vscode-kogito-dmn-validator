@@ -1,0 +1,117 @@
+{
+	"name": "dmn-explorer-bundle",
+	"displayName": "DMN Explorer",
+	"description": "Navigate, search, validate DMNs",
+	"version": "0.0.2",
+	"publisher": "rhettss",
+	"license": "FREE",
+	"icon": "resources/icon.png",
+	"author": {
+		"name": "Rhett Ss",
+		"email": "rhettss@gmail.com"
+	},
+	"enableProposedApi": true,
+	"engines": {
+		"vscode": "^1.52.0"
+	},
+	"categories": [
+		"Visualization",
+		"Other"
+	],
+	"activationEvents": [
+		"onView:fileExplorer"
+	],
+	"main": "./out/extension.js",
+	"contributes": {
+		"views": {
+			"explorer": [
+				{
+					"id": "fileExplorer",
+					"name": "DMN Validator"
+				},
+				{
+					"id": "dmnExplorer",
+					"name": "DMN Explorer"
+				}
+			]
+		},
+		"commands": [
+			{
+				"command": "fileExplorer.testContext",
+				"title": "Test Context",
+				"icon": {
+					"light": "resources/refresh-flat.png",
+					"dark": "resources/refresh-flat.png"
+				}
+			},
+			{
+				"command": "fileExplorer.refreshRoot",
+				"title": "Refresh",
+				"icon": {
+					"light": "resources/refresh-flat.png",
+					"dark": "resources/refresh-flat.png"
+				}
+			},
+			{
+				"command": "fileExplorer.openFolder",
+				"title": "View in Explorer",
+				"icon": {
+					"light": "resources/folder-open.png",
+					"dark": "resources/folder-open.png"
+				}
+			},
+			{
+				"command": "fileExplorer.openFile",
+				"title": "Open File"
+			}
+		],
+		"menus": {
+			"view/title": [
+				{
+					"command": "fileExplorer.refreshRoot",
+					"when": "view == fileExplorer",
+					"group": "navigation"
+				}
+			],
+			"view/item/context": [
+				{
+					"command": "fileExplorer.testContext",
+					"when": "view == fileExplorer",
+					"group": "inline"
+				}
+			]
+		}
+	},
+	"repository": {
+		"url": "https://microsoft.com/",
+		"type": "git"
+	},
+	"scripts": {
+		"vscode:prepublish": "npm run compile",
+		"compile": "tsc -p ./",
+		"watch": "tsc -watch -p ./",
+		"lint": "eslint . --ext .ts,.tsx"
+	},
+	"devDependencies": {
+		"@types/mkdirp": "^0.5.2",
+		"@types/node": "^12.12.0",
+		"@types/rimraf": "^2.0.2",
+		"@types/vscode": "^1.45.0",
+		"@typescript-eslint/eslint-plugin": "^4.16.0",
+		"@typescript-eslint/parser": "^4.16.0",
+		"eslint": "^7.21.0",
+		"typescript": "^4.2.2"
+	},
+	"dependencies": {
+		"fast-folder-size": "^1.3.0",
+		"filesize": "^6.3.0",
+		"gzip-size": "^6.0.0",
+		"minimist": "^0.2.1",
+		"mkdirp": "^0.5.1",
+		"node-fetch": "^2.6.6",
+		"rimraf": "^2.6.2",
+		"typed-rest-client": "^1.8.6",
+		"vscode": "^1.1.37",
+		"vscode-uri": "^3.0.3"
+	}
+}
