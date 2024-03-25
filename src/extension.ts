@@ -2,10 +2,10 @@
 
 import * as vscode from 'vscode';
 
-import { FileExplorer } from './fileExplorer';
+import { DecisionFileExplorer } from './DecisionFileExplorer';
 
 export function activate(context: vscode.ExtensionContext) {
 
-	new FileExplorer(context);
+	new DecisionFileExplorer(context);
 
 }

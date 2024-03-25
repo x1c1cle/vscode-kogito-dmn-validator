@@ -19,18 +19,14 @@
 		"Other"
 	],
 	"activationEvents": [
-		"onView:fileExplorer"
+		"onView:decisionExplorer"
 	],
 	"main": "./out/extension.js",
 	"contributes": {
 		"views": {
 			"explorer": [
 				{
-					"id": "fileExplorer",
-					"name": "DMN Validator"
-				},
-				{
-					"id": "dmnExplorer",
+					"id": "decisionExplorer",
 					"name": "DMN Explorer"
 				}
 			]
